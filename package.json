@@ -1,0 +1,12 @@
+{
+  "name": "full-stack-app",
+  "version": "1.0.0",
+  "description": "docker-compose up -d --build",
+  "main": "index.js",
+  "scripts": {
+    "start": "docker-compose up -d --build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

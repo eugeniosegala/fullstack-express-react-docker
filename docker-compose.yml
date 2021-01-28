@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  sample-api:
+    image: sample-api
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: sample-api
+    ports:
+      - "9000:9000"
+  sample-fe:
+    image: sample-fe
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: sample-fe
+    ports:
+      - "3000:3000"
