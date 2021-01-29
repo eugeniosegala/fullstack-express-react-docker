@@ -17,3 +17,5 @@ services:
     container_name: sample-fe
     ports:
       - "3000:3000"
+    depends_on:
+      - "sample-api"

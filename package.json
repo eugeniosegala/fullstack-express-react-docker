@@ -4,7 +4,9 @@
   "description": "docker-compose up -d --build",
   "main": "index.js",
   "scripts": {
-    "start": "docker-compose up -d --build"
+    "start": "docker-compose up -d --build",
+    "start-client": "cd client && yarn start",
+    "start-server": "cd server && yarn start"
   },
   "keywords": [],
   "author": "",
