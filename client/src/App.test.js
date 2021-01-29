@@ -1,8 +1,25 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('if header and text are present', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+
+  const sampleText = screen.getByText('Hello world!');
+  const header = screen.getByTestId('app-header');
+
+  // screen.debug();
+
+  expect(sampleText).toBeInTheDocument();
+  expect(header).toBeInTheDocument();
 });
+
+test('if the number is incrementing', () => {
+  render(<App />);
+
+  fireEvent.click(screen.getByText('Click me!'));
+
+  const sampleText = screen.getByText('Result: 1');
+
+  expect(sampleText).toBeInTheDocument();
+});
+
