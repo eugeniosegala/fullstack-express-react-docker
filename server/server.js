@@ -1,5 +1,5 @@
 const server = require('./index');
-const port = process.env.PORT || 3000;
+const port = 9000;
 
 server.listen(port, function () {
     console.log('Server running on port %d', port);

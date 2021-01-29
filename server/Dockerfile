@@ -16,6 +16,7 @@ RUN yarn install --production
 # Bundle app source
 COPY ./app ./app
 COPY index.js .
+COPY server.js .
 
 EXPOSE 9000
-CMD [ "node", "index.js" ]
+CMD [ "node", "server.js" ]

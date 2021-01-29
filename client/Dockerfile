@@ -4,15 +4,14 @@
 
 # Name the node stage "builder"
 FROM node:14 AS builder
+LABEL stage=builder
 # Set working directory
 WORKDIR /app
 # Copy all files from current directory to working dir in image
-COPY public .
-COPY src .
-COPY package.json ./
-COPY yarn.lock ./
+COPY . .
 # install node modules and build assets
-RUN yarn install --production && yarn build
+RUN yarn install --production
+RUN yarn build
 
 # nginx state for serving content
 FROM nginx:alpine
