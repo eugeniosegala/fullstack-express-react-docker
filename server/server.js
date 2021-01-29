@@ -1,9 +1,6 @@
-const express = require('express')
-const app = express()
-const mockProducts = require('./app/mocks/products')
+const server = require('./index');
+const port = process.env.PORT || 3000;
 
-app.get('/products', (req, res) => {
-  return res.json(mockProducts)
-})
-
-app.listen(9000)
+server.listen(port, function () {
+    console.log('Server running on port %d', port);
+});
